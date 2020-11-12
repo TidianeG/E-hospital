@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_presentation"
+            android:icon="@drawable/ic_home_24"
+            android:title="@string/presentation" />
+
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_help_24"
+            android:title="@string/help">
+
+        </item>
+
+    </group>
+
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_patient_management"
+            android:icon="@drawable/ic_sick_24"
+            android:title="@string/patient_management" />
+        <item
+            android:id="@+id/nav_appoint_management"
+            android:icon="@drawable/ic_calendar_24"
+            android:title="@string/appointment_management" />
+        <item
+            android:id="@+id/nav_user_management"
+            android:icon="@drawable/ic_user_24"
+            android:title="@string/user_management">
+
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_connection"
+            android:icon="@drawable/ic_login_24"
+            android:title="@string/connection">
+
+        </item>
+        <item
+            android:id="@+id/nav_inscription"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/inscription">
+
+        </item>
+    </group>
+</menu>
