@@ -10,6 +10,11 @@
         android:name="com.enginer.e_hospital.ui.home.HomeFragment"
         android:label="@string/presentation"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_inscription"
+        android:name="com.enginer.e_hospital.InscriptionFragment"
+        android:label="@string/inscription"
+        tools:layout="@layout/fragment_inscription" />
     <activity
         android:id="@+id/nav_connection"
         android:name="com.enginer.e_hospital.ui.login.LoginActivity"
