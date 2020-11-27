@@ -24,15 +24,18 @@
         <item
             android:id="@+id/nav_patient_management"
             android:icon="@drawable/ic_sick_24"
-            android:title="@string/patient_management" />
+            android:title="@string/patient_management"
+            android:visible="false"/>
         <item
             android:id="@+id/nav_appoint_management"
             android:icon="@drawable/ic_calendar_24"
-            android:title="@string/appointment_management" />
+            android:title="@string/appointment_management"
+            android:visible="false"/>
         <item
             android:id="@+id/nav_user_management"
             android:icon="@drawable/ic_user_24"
-            android:title="@string/user_management">
+            android:title="@string/user_management"
+            android:visible="false">
 
         </item>
     </group>

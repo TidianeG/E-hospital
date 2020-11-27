@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,17 +10,33 @@
        android:orientation="vertical"
        android:layout_width="match_parent"
        android:layout_height="match_parent">
+
        <ImageView
-           android:src="@mipmap/ic_launcher"
-           android:layout_width="match_parent"
-           android:layout_height="@dimen/dim_middle">
+           android:src="@mipmap/ic_launcher_foreground"
+           android:layout_width="wrap_content"
+           android:layout_height="@dimen/dim_middle"
+
+           >
+
        </ImageView>
+       <androidx.viewpager.widget.ViewPager
+           android:id="@+id/viewPagerMain"
+           android:layout_width="match_parent"
+           android:layout_height="190dp"
+           android:layout_marginBottom="8dp"
+           android:background="@drawable/medicale2"
+           >
+
+       </androidx.viewpager.widget.ViewPager>
+
        <TextView
            android:layout_width="match_parent"
            android:textSize="@dimen/dim_title"
            android:layout_height="wrap_content"
            android:layout_marginTop="@dimen/dim_top"
            android:text="@string/history_hospital">
+
        </TextView>
+
    </LinearLayout>
 </ScrollView>

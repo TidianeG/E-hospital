@@ -3,23 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_presentation">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_presentation"
         android:name="com.enginer.e_hospital.ui.home.HomeFragment"
         android:label="@string/presentation"
         tools:layout="@layout/fragment_home" />
+    <activity
+        android:id="@+id/nav_connection"
+        android:name="com.enginer.e_hospital.ui.login.LoginActivity"
+        android:label="@string/connection"
+        tools:layout="@layout/activity_login"
+        >
 
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.enginer.e_hospital.ui.gallery.GalleryFragment"
-        android:label="@string/help"
-        tools:layout="@layout/fragment_gallery" />
+    </activity>
 
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.enginer.e_hospital.ui.slideshow.SlideshowFragment"
-        android:label="@string/patient_management"
-        tools:layout="@layout/fragment_slideshow" />
+
 </navigation>
