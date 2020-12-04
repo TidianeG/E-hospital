@@ -29,13 +29,7 @@ public class InscriptionFragment extends Fragment {
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_inscription, container, false);
-        final TextView textView = root.findViewById(R.id.nav_inscription);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                //textView.setText(s);
-            }
-        });
+
         return root;
     }
 }

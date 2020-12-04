@@ -3,10 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InscriptionFragment"
-    android:id="@+id/nav_inscription">
+    tools:context=".AddAppointmentFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -33,92 +31,53 @@
             android:layout_marginTop="@dimen/dim_top"
             android:textSize="@dimen/dim_title"
             android:gravity="center"
-            android:text="@string/new_patient"
+            android:text="@string/new_appointment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
         </TextView>
         <EditText
-            android:id="@+id/txtFirstName"
-            android:hint="@string/first_name"
+            android:id="@+id/numPatient"
+            android:hint="@string/num_patient"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
         </EditText>
         <EditText
-            android:id="@+id/txtLastName"
-            android:hint="@string/last_name"
+            android:id="@+id/doctorAppoint"
+            android:hint="@string/doctor"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
         </EditText>
         <EditText
-            android:id="@+id/textBirthday"
-            android:hint="@string/birthday"
+            android:id="@+id/patternAppoint"
+            android:hint="@string/pattern"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
         </EditText>
+
+        <DatePicker
+            android:id="@+id/dateAppoint"
+            android:hint="@string/date_rv"
+            android:layout_marginTop="@dimen/dim_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </DatePicker>
+
         <EditText
-            android:id="@+id/txtProfession"
-            android:hint="@string/profession"
+            android:id="@+id/serviceAppoint"
+            android:hint="@string/service"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
         </EditText>
-        <EditText
-            android:id="@+id/txtAdresse"
-            android:hint="@string/address"
-            android:layout_marginTop="@dimen/dim_top"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </EditText>
-        <EditText
-            android:id="@+id/textEmail"
-            android:hint="@string/mail"
-            android:layout_marginTop="@dimen/dim_top"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </EditText>
-        <EditText
-            android:id="@+id/txtPhone"
-            android:hint="@string/phone"
-            android:layout_marginTop="@dimen/dim_top"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </EditText>
-        <RadioButton
-            android:id="@+id/btnMan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/man">
-
-        </RadioButton>
-        <RadioButton
-            android:id="@+id/btnWoman"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/woman">
-
-        </RadioButton>
-        <Button
-
-            android:textColor="@color/white"
-            android:id="@+id/btnSave"
-            android:background="@color/darkBlue"
-            android:layout_margin="@dimen/dim_all"
-            android:text="@string/save"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </Button>
     </LinearLayout>
 
 </ScrollView>

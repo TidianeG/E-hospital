@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AppointmentManagementFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/containerAppointmentList">
+        <LinearLayout
+            android:id="@+id/containerListAppointment"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <ImageView
+                android:src="@mipmap/ic_launcher_foreground"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dim_middle"
+                >
+
+            </ImageView>
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPagerMain"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/secretaire"
+                >
+
+            </androidx.viewpager.widget.ViewPager>
+            <Button
+                android:id="@+id/btnNewAppointment"
+                android:layout_marginLeft="@dimen/dim_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_new_appoint"
+                android:textColor="@color/white">
+
+            </Button>
+            <TextView
+                android:textSize="@dimen/dim_title"
+                android:textColor="@color/darkBlue"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/appointment_list">
+
+            </TextView>
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dim_all"
+                android:layout_gravity="center">
+                <TableRow
+                    >
+                    <TextView
+                        android:text="@string/date_rv"
+                        android:layout_marginRight="22dp"
+                        >
+
+                    </TextView>
+                    <TextView
+                        android:text="@string/patient"
+                        android:layout_marginRight="22dp">
+                    </TextView>
+                    <TextView
+                        android:text="@string/doctor"
+                        android:layout_marginRight="22dp">
+                    </TextView>
+                    <TextView
+                        android:text="@string/pattern"
+                        android:layout_marginRight="22dp">
+                    </TextView>
+                    <TextView
+                        android:text="@string/service"
+                        android:layout_marginRight="22dp">
+                    </TextView>
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+
+</ScrollView>

@@ -38,6 +38,21 @@
     <string name="save">Save</string>
     <string name="man">Man</string>
     <string name="woman">Woman</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="patient_list">Patients list</string>
+    <string name="appointment_list">Appointment list</string>
+    <string name="btn_new_appoint">New appointment</string>
+    <string name="btn_new_patient">New patient</string>
+    <string name="date_rv">Date</string>
+    <string name="pattern">Pattern</string>
+    <string name="patient">Patient</string>
+    <string name="doctor">Doctor</string>
+    <string name="service">Service</string>
+    <string name="num_patient">Patient Number</string>
+    <string name="new_appointment">New appointment</string>
+    <string name="new_patient">New patient</string>
+
 
 
 </resources>

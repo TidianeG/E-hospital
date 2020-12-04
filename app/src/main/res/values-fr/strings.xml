@@ -37,6 +37,17 @@
     <string name="save">Sauvegarder</string>
     <string name="man">Masculin</string>
     <string name="woman">Feminin</string>
-
+    <string name="patient_list">Liste des patients</string>
+    <string name="appointment_list">Liste des rendez-vous</string>
+    <string name="btn_new_appoint">Nouvel rendez-vous</string>
+    <string name="btn_new_patient">Nouvel patient</string>
+    <string name="date_rv">Date</string>
+    <string name="pattern">Motif</string>
+    <string name="patient">Patient</string>
+    <string name="doctor">Medecin</string>
+    <string name="service">Service</string>
+    <string name="new_patient">Nouvel Patient</string>
+    <string name="new_appointment">Nouvel rendez-vous</string>
+    <string name="num_patient">Numero patient</string>
 
 </resources>
