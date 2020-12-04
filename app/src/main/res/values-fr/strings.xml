@@ -49,5 +49,16 @@
     <string name="new_patient">Nouvel Patient</string>
     <string name="new_appointment">Nouvel rendez-vous</string>
     <string name="num_patient">Numero patient</string>
+    <string name="my_account">Mon compte</string>
+    <string name="disconnect">Deconnection</string>
+    <string name="doctor__prompt">Selectionner un medecin</string>
+
+    <string-array name="doctor__arrays">
+        <item>Dr Gaye</item>
+        <item>Dr Thiam</item>
+        <item>Dr Beye</item>
+        <item>Dr Faye</item>
+
+    </string-array>
 
 </resources>

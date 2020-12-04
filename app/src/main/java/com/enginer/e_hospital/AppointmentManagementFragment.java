@@ -43,7 +43,7 @@ public class AppointmentManagementFragment extends Fragment {
         btnNewAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                layout.setVisibility(View.INVISIBLE);
+               layout.setVisibility(View.INVISIBLE);
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
 
                 ft.replace(R.id.containerAppointmentList, new AddAppointmentFragment());

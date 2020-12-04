@@ -28,6 +28,17 @@
             >
 
         </androidx.viewpager.widget.ViewPager>
+        <Button
+            android:id="@+id/backPatient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/darkBlue"
+            android:padding="@dimen/dim_all"
+            android:text="retour"
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/dim_left">
+
+        </Button>
         <TextView
             android:textStyle="bold"
             android:layout_marginTop="@dimen/dim_top"
@@ -43,7 +54,8 @@
             android:hint="@string/first_name"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dim_all">
 
         </EditText>
         <EditText
@@ -51,7 +63,8 @@
             android:hint="@string/last_name"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dim_all">
 
         </EditText>
         <EditText
@@ -59,7 +72,8 @@
             android:hint="@string/birthday"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dim_all">
 
         </EditText>
         <EditText
@@ -67,7 +81,8 @@
             android:hint="@string/profession"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dim_all">
 
         </EditText>
         <EditText
@@ -75,7 +90,8 @@
             android:hint="@string/address"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dim_all">
 
         </EditText>
         <EditText
@@ -83,7 +99,8 @@
             android:hint="@string/mail"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dim_all">
 
         </EditText>
         <EditText
@@ -91,21 +108,24 @@
             android:hint="@string/phone"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dim_all">
 
         </EditText>
         <RadioButton
             android:id="@+id/btnMan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/man">
+            android:text="@string/man"
+            android:layout_margin="@dimen/dim_all">
 
         </RadioButton>
         <RadioButton
             android:id="@+id/btnWoman"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/woman">
+            android:text="@string/woman"
+            android:layout_margin="@dimen/dim_all">
 
         </RadioButton>
         <Button
@@ -113,10 +133,11 @@
             android:textColor="@color/white"
             android:id="@+id/btnSave"
             android:background="@color/darkBlue"
-            android:layout_margin="@dimen/dim_all"
+
             android:text="@string/save"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dim_all">
 
         </Button>
     </LinearLayout>

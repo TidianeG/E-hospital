@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddAppointmentFragment">
+    tools:context=".AddAppointmentFragment"
+    android:id="@+id/addNewAppointment">
 
     <LinearLayout
         android:orientation="vertical"
@@ -26,6 +27,17 @@
             >
 
         </androidx.viewpager.widget.ViewPager>
+        <Button
+            android:id="@+id/backAppoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/darkBlue"
+            android:padding="@dimen/dim_all"
+            android:text="retour"
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/dim_left">
+
+        </Button>
         <TextView
             android:textStyle="bold"
             android:layout_marginTop="@dimen/dim_top"
@@ -36,28 +48,35 @@
             android:layout_height="wrap_content">
 
         </TextView>
+
+
         <EditText
             android:id="@+id/numPatient"
             android:hint="@string/num_patient"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dim_all">
 
         </EditText>
-        <EditText
-            android:id="@+id/doctorAppoint"
-            android:hint="@string/doctor"
-            android:layout_marginTop="@dimen/dim_top"
+        <Spinner
+            android:id="@+id/spinnerDoctor"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:entries="@array/doctor__arrays"
+            android:prompt="@string/doctor__prompt"
+            android:layout_marginTop="@dimen/dim_top"
+            android:layout_margin="@dimen/dim_all">
 
-        </EditText>
+        </Spinner>
+
         <EditText
             android:id="@+id/patternAppoint"
             android:hint="@string/pattern"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dim_all">
 
         </EditText>
 
@@ -66,7 +85,8 @@
             android:hint="@string/date_rv"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dim_all">
 
         </DatePicker>
 
@@ -75,9 +95,21 @@
             android:hint="@string/service"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dim_all">
 
         </EditText>
+        <Button
+            android:id="@+id/btnSaveAppoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:padding="@dimen/dim_all"
+            android:background="@color/white"
+            android:layout_margin="@dimen/dim_all">
+
+        </Button>
     </LinearLayout>
 
 </ScrollView>
