@@ -33,6 +33,7 @@
     <string name="birthday">Birthday</string>
     <string name="address">"Address"</string>
     <string name="profession">Profession</string>
+    <string name="lieu">Place</string>
     <string name="phone">Phone</string>
     <string name="mail">Email</string>
     <string name="save">Save</string>
@@ -54,6 +55,9 @@
     <string name="new_patient">New patient</string>
     <string name="my_account">My account</string>
     <string name="disconnect">Disconnect</string>
+    <string name="error_fields">Please complete all fields</string>
+    <string name="error_connection">Error connection</string>
+    <string name="error_inscription">Error inscription</string>
     <string name="doctor__prompt">Choose a doctor</string>
 
     <string-array name="doctor__arrays">
@@ -62,6 +66,12 @@
         <item>Dr Beye</item>
         <item>Dr Faye</item>
 
+    </string-array>
+    <string name="genre__prompt">Choose a genre</string>
+
+    <string-array name="genre__arrays">
+        <item>Man</item>
+        <item>Woman</item>
     </string-array>
 
 

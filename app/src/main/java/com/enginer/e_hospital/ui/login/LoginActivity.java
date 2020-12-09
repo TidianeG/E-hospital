@@ -1,131 +1,151 @@
 package com.enginer.e_hospital.ui.login;
 
-import android.app.Activity;
-
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
+import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.enginer.e_hospital.AccessBase;
+import com.enginer.e_hospital.MainActivity;
 import com.enginer.e_hospital.R;
-import com.enginer.e_hospital.ui.login.LoginViewModel;
-import com.enginer.e_hospital.ui.login.LoginViewModelFactory;
+
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import java.sql.*;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private LoginViewModel loginViewModel;
+    private String login,password;
+    private EditText editTextlogin,editTextpassword;
 
+    private Button loginButton;
+    private ProgressBar loadingProgressBar;
+    private AccessBase accessBase;
+    private static String dbUrl;
+    private static String dbUsername;
+    private static String dbPassword;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
-                .get(LoginViewModel.class);
 
-        final EditText usernameEditText = findViewById(R.id.username);
-        final EditText passwordEditText = findViewById(R.id.password);
-        final Button loginButton = findViewById(R.id.login);
-        final ProgressBar loadingProgressBar = findViewById(R.id.loading);
+        //Liaison entre variables et composants du desi
+        editTextlogin = findViewById(R.id.username);
+        editTextpassword = findViewById(R.id.password);
+        loginButton = findViewById(R.id.login);
+        loadingProgressBar = findViewById(R.id.loading);
 
-        loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
-            @Override
-            public void onChanged(@Nullable LoginFormState loginFormState) {
-                if (loginFormState == null) {
-                    return;
-                }
-                loginButton.setEnabled(loginFormState.isDataValid());
-                if (loginFormState.getUsernameError() != null) {
-                    usernameEditText.setError(getString(loginFormState.getUsernameError()));
-                }
-                if (loginFormState.getPasswordError() != null) {
-                    passwordEditText.setError(getString(loginFormState.getPasswordError()));
-                }
-            }
-        });
-
-        loginViewModel.getLoginResult().observe(this, new Observer<LoginResult>() {
-            @Override
-            public void onChanged(@Nullable LoginResult loginResult) {
-                if (loginResult == null) {
-                    return;
-                }
-                loadingProgressBar.setVisibility(View.GONE);
-                if (loginResult.getError() != null) {
-                    showLoginFailed(loginResult.getError());
-                }
-                if (loginResult.getSuccess() != null) {
-                    updateUiWithUser(loginResult.getSuccess());
-                }
-                setResult(Activity.RESULT_OK);
-
-                //Complete and destroy login activity once successful
-                finish();
-            }
-        });
-
-        TextWatcher afterTextChangedListener = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // ignore
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // ignore
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                loginViewModel.loginDataChanged(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
-            }
-        };
-        usernameEditText.addTextChangedListener(afterTextChangedListener);
-        passwordEditText.addTextChangedListener(afterTextChangedListener);
-        passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    loginViewModel.login(usernameEditText.getText().toString(),
-                            passwordEditText.getText().toString());
-                }
-                return false;
-            }
-        });
-
+        // Evenement du click button connexion
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+                accessBase= new AccessBase();
+                login = editTextlogin.getText().toString().trim();
+                password = editTextpassword.getText().toString().trim();
+                if (login.isEmpty() || password.isEmpty()){
+                    String message = getString(R.string.error_fields);
+                    Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
+                }
+               else {
+                   testLogin(login,password);
+
+                }
+                /*else{
+                    String message = getString(R.string.error_connection);
+                    Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
+                }*/
             }
         });
     }
+    public void testLogin(String logger, String passer){
+        String emailrecup ="";
+        String passrecup="";
+        try{
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            System.out.println("chargement du pilote réussi");
+            Connection co = DriverManager.getConnection("jdbc:mysql://10.156.83.142:3306/e_hospital","gaye95cheikh","27ndawGAYE");
+            System.out.println("connexion réussi");
+            Statement st = co.createStatement();
+            ResultSet resultats = st.executeQuery("SELECT * FROM users WHERE email="+logger+" AND password="+passer);
+            while (resultats.next()){
+                 emailrecup = resultats.getString(2);
+                 passrecup = resultats.getString(3);
+            }
+                if (emailrecup==logger && passrecup == passer){
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    intent.putExtra("LOGIN", login);
+                    startActivity(intent);
+                }
+                else {
+                    String message = getString(R.string.error_connection);
+                    Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
+                }
+                co.close();
+        }
+        catch (Exception se) {
+            String message = getString(R.string.error_connection);
+            Toast.makeText(LoginActivity.this, "Connection impossible", Toast.LENGTH_SHORT).show();
+        }
 
-    private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
-        // TODO : initiate successful logged in experience
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
     }
+    public  void loginToServer(){
+        String url = "http://10.156.83.142/connexion.php?email="+login+"&password="+password;
+        OkHttpClient client = new  OkHttpClient();
+        Request request = new  Request.Builder()
+                .url(url)
+                .build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String message = getString(R.string.error_connection);
+                        Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
 
-    private void showLoginFailed(@StringRes Integer errorString) {
-        Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                try {
+                    loadingProgressBar.setVisibility(View.VISIBLE);
+                    String result = response.body().string();
+                    JSONObject jo = new JSONObject(result);
+                    String status = jo.getString("status");
+                    if (status.equalsIgnoreCase("ok")){
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        intent.putExtra("LOGIN", login);
+                        startActivity(intent);
+                    }
+                    else {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                String message = getString(R.string.error_connection);
+                                Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
+                    }
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 }

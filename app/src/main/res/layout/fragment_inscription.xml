@@ -67,9 +67,20 @@
             android:layout_margin="@dimen/dim_all">
 
         </EditText>
-        <EditText
+        <DatePicker
             android:id="@+id/textBirthday"
-            android:hint="@string/birthday"
+            android:text="@string/birthday"
+            android:layout_marginTop="@dimen/dim_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dim_all"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false">
+
+        </DatePicker>
+        <EditText
+            android:id="@+id/txtLieu"
+            android:hint="@string/lieu"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -112,22 +123,16 @@
             android:layout_margin="@dimen/dim_all">
 
         </EditText>
-        <RadioButton
-            android:id="@+id/btnMan"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/spinnerGenre"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/man"
+            android:entries="@array/genre__arrays"
+            android:prompt="@string/genre__prompt"
+            android:layout_marginTop="@dimen/dim_top"
             android:layout_margin="@dimen/dim_all">
 
-        </RadioButton>
-        <RadioButton
-            android:id="@+id/btnWoman"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/woman"
-            android:layout_margin="@dimen/dim_all">
-
-        </RadioButton>
+        </Spinner>
         <Button
 
             android:textColor="@color/white"

@@ -50,8 +50,13 @@
     <string name="new_appointment">Nouvel rendez-vous</string>
     <string name="num_patient">Numero patient</string>
     <string name="my_account">Mon compte</string>
+    <string name="lieu">Lieu</string>
     <string name="disconnect">Deconnection</string>
+    <string name="error_fields">Veuiller renseigner tous les champs</string>
+    <string name="error_connection">Erreur de connexion</string>
+    <string name="error_inscription">Erreur inscription</string>
     <string name="doctor__prompt">Selectionner un medecin</string>
+
 
     <string-array name="doctor__arrays">
         <item>Dr Gaye</item>
@@ -59,6 +64,12 @@
         <item>Dr Beye</item>
         <item>Dr Faye</item>
 
+    </string-array>
+    <string name="genre__prompt">Selectionner le genre</string>
+
+    <string-array name="genre__arrays">
+        <item>Masculin</item>
+        <item>Feminin</item>
     </string-array>
 
 </resources>
