@@ -58,6 +58,7 @@
     <string name="error_fields">Please complete all fields</string>
     <string name="error_connection">Error connection</string>
     <string name="error_inscription">Error inscription</string>
+    <string name="secretaire">Secretaire</string>
     <string name="doctor__prompt">Choose a doctor</string>
 
     <string-array name="doctor__arrays">
@@ -73,7 +74,13 @@
         <item>Man</item>
         <item>Woman</item>
     </string-array>
-
+    <string name="title_activity_patient">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_secretaire">SecretaireActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 
 
 </resources>

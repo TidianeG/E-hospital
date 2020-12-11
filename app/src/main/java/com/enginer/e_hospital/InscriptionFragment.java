@@ -52,6 +52,7 @@ public class InscriptionFragment extends Fragment {
     private Button btnSave;
     private Spinner txtSpinnerGenre;
     private String firstName,lastName,profession,adress,email,phone,spinnerGenre,lieu,birthday;
+    private TextView messageInscription;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -70,6 +71,7 @@ public class InscriptionFragment extends Fragment {
         txtphone = root.findViewById(R.id.txtPhone);
         txtlieu = root.findViewById(R.id.txtLieu);
         txtSpinnerGenre = root.findViewById(R.id.spinnerGenre);
+        messageInscription = root.findViewById(R.id.messageInscription);
 
         btnSave = root.findViewById(R.id.btnSave);
         /// Récupération des infos du patient
@@ -103,23 +105,11 @@ public class InscriptionFragment extends Fragment {
         return root;
     }
     public void inscriptionToServer(){
-        String url="http://10.156.83.142/ehospital/inscription.php";
+        String url="http://10.156.83.142/inscription.php?nom="+lastName+"&prenom="+firstName+"&genre="+spinnerGenre +"&birthday="+birthday+"&profession="+profession+"&address="+adress+"&email="+email+"&phone="+phone+"&lieu="+lieu;
 
-        OkHttpClient client = new OkHttpClient();
-        RequestBody formBody = new FormBody.Builder()
-                .add("nom", lastName)
-                .add("prenom", firstName)
-                .add("genre", spinnerGenre)
-                .add("birthday", birthday)
-                .add("profession", profession)
-                .add("address", adress)
-                .add("email", email)
-                .add("phone", phone)
-                .add("lieu", lieu)
-                .build();
-        Request request = new Request.Builder()
+        OkHttpClient client = new  OkHttpClient();
+        Request request = new  Request.Builder()
                 .url(url)
-                .post(formBody)
                 .build();
         client.newCall(request).enqueue(new Callback() {
             @Override
@@ -139,13 +129,25 @@ public class InscriptionFragment extends Fragment {
                     JSONObject jo = new JSONObject(result);
                     String status = jo.getString("status");
                     if (status.equalsIgnoreCase("ok")){
+                        txtfirstName.setText("");
+                        txtlastName.setText("");
 
+                        txtprofession.setText("");
+                        txtadress.setText("");
+                        txtemail.setText("");
+                        txtphone.setText("");
+                        txtlieu.setText("");
+                        messageInscription.setText("Patient ajouté avec suces");
+                        messageInscription.setVisibility(View.VISIBLE);
                         Toast.makeText(getActivity(), "Patient ajouté", Toast.LENGTH_SHORT).show();
                     }
                     else {
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                messageInscription.setText("Veuiller verifier tous les champs");
+
+                                messageInscription.setVisibility(View.VISIBLE);
                                 String message = getString(R.string.error_inscription);
                                 Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
                             }

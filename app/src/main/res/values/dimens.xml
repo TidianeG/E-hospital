@@ -12,4 +12,6 @@
     <dimen name="dim_bottom">10dp</dimen>
     <dimen name="dim_middle">100dp</dimen>
     <dimen name="dim_all">15dp</dimen>
+    <dimen name="appbar_padding">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
 </resources>

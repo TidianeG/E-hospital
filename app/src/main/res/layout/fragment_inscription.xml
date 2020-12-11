@@ -133,6 +133,14 @@
             android:layout_margin="@dimen/dim_all">
 
         </Spinner>
+        <TextView
+            android:id="@+id/messageInscription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_top"
+            android:layout_margin="@dimen/dim_all">
+
+        </TextView>
         <Button
 
             android:textColor="@color/white"

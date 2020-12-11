@@ -10,11 +10,7 @@
         android:name="com.enginer.e_hospital.ui.home.HomeFragment"
         android:label="@string/presentation"
         tools:layout="@layout/fragment_home" />
-    <fragment
-        android:id="@+id/nav_patient_management"
-        android:name="com.enginer.e_hospital.PatientManagementFragment"
-        android:label="@string/patient_management"
-        tools:layout="@layout/fragment_patient_management" />
+
     <fragment
         android:id="@+id/nav_appoint_management"
         android:name="com.enginer.e_hospital.AppointmentManagementFragment"
@@ -30,6 +26,24 @@
         android:name="com.enginer.e_hospital.AddAppointmentFragment"
         android:label="@string/appointment_management"
         tools:layout="@layout/fragment_add_appointment" />
+    <fragment
+        android:id="@+id/nav_patient_management"
+        android:name="com.enginer.e_hospital.PatientManagementFragment"
+        android:label="@string/appointment_management"
+        tools:layout="@layout/fragment_patient_management" />
+    <activity
+        android:id="@+id/nav_patient"
+        android:name="com.enginer.e_hospital.PatientActivity"
+        android:label="@string/secretaire"
+        tools:layout="@layout/activity_patient"
+        />
+    <activity
+        android:id="@+id/nav_secretaire"
+        android:name="com.enginer.e_hospital.SecretaireActivity"
+        android:label="@string/secretaire"
+        tools:layout="@layout/activity_secretaire"
+        />
+
     <activity
         android:id="@+id/nav_connection"
         android:name="com.enginer.e_hospital.ui.login.LoginActivity"

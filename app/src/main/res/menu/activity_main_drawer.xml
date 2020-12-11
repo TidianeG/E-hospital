@@ -20,20 +20,20 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_patient_management"
+            android:id="@+id/nav_patient"
             android:icon="@drawable/ic_sick_24"
-            android:title="@string/patient_management"
+            android:title="@string/patient"
             android:visible="true"/>
         <item
-            android:id="@+id/nav_appoint_management"
+            android:id="@+id/nav_medecin"
             android:icon="@drawable/ic_calendar_24"
-            android:title="@string/appointment_management"
+            android:title="@string/doctor"
             android:visible="true"/>
         <item
-            android:id="@+id/nav_user_management"
+            android:id="@+id/nav_secretaire"
             android:icon="@drawable/ic_user_24"
-            android:title="@string/user_management"
-            android:visible="false">
+            android:title="@string/secretaire"
+            android:visible="true">
 
         </item>
     </group>

@@ -29,8 +29,8 @@
     <string name="login_failed">"Login failed"</string>
     <string name="last_name">Nom</string>
     <string name="first_name">Prenom</string>
-    <string name="birthday">Date de naissance</string>
-    <string name="address">"Adresse"</string>
+    <string name="birthday">Naissance</string>
+    <string name="address">Adresse</string>
     <string name="profession">Profession</string>
     <string name="phone">Telephone</string>
     <string name="mail">Email</string>
@@ -51,6 +51,7 @@
     <string name="num_patient">Numero patient</string>
     <string name="my_account">Mon compte</string>
     <string name="lieu">Lieu</string>
+    <string name="secretaire">Secretaire</string>
     <string name="disconnect">Deconnection</string>
     <string name="error_fields">Veuiller renseigner tous les champs</string>
     <string name="error_connection">Erreur de connexion</string>

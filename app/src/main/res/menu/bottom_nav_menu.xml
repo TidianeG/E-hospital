@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_appoint_management"
+        android:icon="@drawable/ic_calendar_24"
+        android:title="@string/appointment_management" />
+
+    <item
+        android:id="@+id/nav_patient_management"
+        android:icon="@drawable/ic_sick_24"
+        android:title="@string/patient_management" />
+
+    <item
+        android:id="@+id/nav_diconnect"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/disconnect" />
+
+</menu>
