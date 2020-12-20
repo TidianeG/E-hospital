@@ -21,10 +21,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EHospital">
-        <activity
-            android:name=".SecretaireActivity"
-            android:label="@string/title_activity_secretaire"
-            android:theme="@style/Theme.EHospital.NoActionBar"></activity>
+        <activity android:name=".MaladeActivity"></activity>
+        <activity android:name=".MedecinActivity" />
+        <activity android:name=".PatientSpaceActivity" />
         <activity
             android:name=".PatientActivity"
             android:label="@string/title_activity_patient" />

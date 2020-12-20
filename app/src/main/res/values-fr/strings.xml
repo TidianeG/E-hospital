@@ -72,5 +72,19 @@
         <item>Masculin</item>
         <item>Feminin</item>
     </string-array>
+    <string name="title_activity_patient">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_secretaire">SecretaireActivity</string>
+    <string name="tension">Tension</string>
+    <string name="temperature">Temperature</string>
+    <string name="poid">Poids</string>
+    <string name="cut">Taille</string>
+    <string name="new_consultation">Nouvelle Consultation</string>
+    <string name="consultation_management">Gestion Consultation</string>
+    <string name="appoint_account">Rendez-vous et Compte</string>
+    <string name="imc">IMC</string>
+    <string name="date_consult">Date</string>
 
 </resources>

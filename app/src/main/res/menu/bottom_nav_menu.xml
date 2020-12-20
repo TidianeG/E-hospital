@@ -4,7 +4,8 @@
     <item
         android:id="@+id/nav_appoint_management"
         android:icon="@drawable/ic_calendar_24"
-        android:title="@string/appointment_management" />
+        android:title="@string/appointment_management"
+        />
 
     <item
         android:id="@+id/nav_patient_management"

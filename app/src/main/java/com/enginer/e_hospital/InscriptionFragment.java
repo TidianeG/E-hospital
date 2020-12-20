@@ -105,7 +105,7 @@ public class InscriptionFragment extends Fragment {
         return root;
     }
     public void inscriptionToServer(){
-        String url="http://10.156.83.142/inscription.php?nom="+lastName+"&prenom="+firstName+"&genre="+spinnerGenre +"&birthday="+birthday+"&profession="+profession+"&address="+adress+"&email="+email+"&phone="+phone+"&lieu="+lieu;
+        String url="http://192.168.43.135/inscription.php?nom="+lastName+"&prenom="+firstName+"&genre="+spinnerGenre +"&birthday="+birthday+"&profession="+profession+"&address="+adress+"&email="+email+"&phone="+phone+"&lieu="+lieu;
 
         OkHttpClient client = new  OkHttpClient();
         Request request = new  Request.Builder()

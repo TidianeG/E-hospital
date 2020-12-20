@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InscriptionFragment"
-    android:id="@+id/nav_inscription">
+    tools:context=".ConsultationFragment"
+    android:id="@+id/consultation">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -24,12 +24,12 @@
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/secretaire"
+            android:background="@drawable/pediatrie"
             >
 
         </androidx.viewpager.widget.ViewPager>
         <Button
-            android:id="@+id/backPatient"
+            android:id="@+id/backConsult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/darkBlue"
@@ -44,14 +44,14 @@
             android:layout_marginTop="@dimen/dim_top"
             android:textSize="@dimen/dim_title"
             android:gravity="center"
-            android:text="@string/new_patient"
+            android:text="@string/new_consultation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
         </TextView>
         <EditText
-            android:id="@+id/txtFirstName"
-            android:hint="@string/first_name"
+            android:id="@+id/num_patient"
+            android:hint="@string/num_patient"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,8 +59,8 @@
 
         </EditText>
         <EditText
-            android:id="@+id/txtLastName"
-            android:hint="@string/last_name"
+            android:id="@+id/motif"
+            android:hint="@string/pattern"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
 
         </EditText>
         <DatePicker
-            android:id="@+id/textBirthday"
+            android:id="@+id/date_consult"
             android:text="@string/birthday"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
@@ -88,8 +88,8 @@
 
         </EditText>
         <EditText
-            android:id="@+id/txtProfession"
-            android:hint="@string/profession"
+            android:id="@+id/poids"
+            android:hint="@string/poid"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -97,8 +97,8 @@
 
         </EditText>
         <EditText
-            android:id="@+id/txtAdresse"
-            android:hint="@string/address"
+            android:id="@+id/taille"
+            android:hint="@string/cut"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -106,8 +106,8 @@
 
         </EditText>
         <EditText
-            android:id="@+id/textEmail"
-            android:hint="@string/mail"
+            android:id="@+id/tension"
+            android:hint="@string/tension"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -115,35 +115,18 @@
 
         </EditText>
         <EditText
-            android:id="@+id/txtPhone"
-            android:hint="@string/phone"
+            android:id="@+id/temperature"
+            android:hint="@string/temperature"
             android:layout_marginTop="@dimen/dim_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dim_all">
 
         </EditText>
-        <Spinner
-            android:id="@+id/spinnerGenre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/genre__arrays"
-            android:prompt="@string/genre__prompt"
-            android:layout_marginTop="@dimen/dim_top"
-            android:layout_margin="@dimen/dim_all">
 
-        </Spinner>
-        <TextView
-            android:id="@+id/messageInscription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dim_top"
-            android:layout_margin="@dimen/dim_all">
-
-        </TextView>
         <Button
             android:textColor="@color/white"
-            android:id="@+id/btnSave"
+            android:id="@+id/btnSaveConsult"
             android:background="@color/darkBlue"
             android:layout_marginBottom="10dp"
             android:text="@string/save"

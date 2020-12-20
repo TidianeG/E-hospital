@@ -13,8 +13,12 @@ import android.widget.Toast;
 
 import com.enginer.e_hospital.AccessBase;
 import com.enginer.e_hospital.MainActivity;
+import com.enginer.e_hospital.MaladeActivity;
+import com.enginer.e_hospital.MedecinActivity;
+import com.enginer.e_hospital.PatientActivity;
 import com.enginer.e_hospital.R;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -59,15 +63,30 @@ public class LoginActivity extends AppCompatActivity {
                     String message = getString(R.string.error_fields);
                     Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
                 }
-               else {
-                  loginToServer();
+               else if (login.equalsIgnoreCase("tidiane@gmail.com") && password.equalsIgnoreCase("gaye")){
+                        System.out.println("je suis là");
+                        Intent intent = new Intent(LoginActivity.this, PatientActivity.class);
+                        intent.putExtra("LOGIN", login);
+                        startActivity(intent);
+                    }
+                    else if (login.equalsIgnoreCase("cheikh@gmail.com") && password.equalsIgnoreCase("gaye")){
+                        System.out.println("je suis là");
+                        Intent intent = new Intent(LoginActivity.this, MedecinActivity.class);
+                        intent.putExtra("LOGIN", login);
+                        startActivity(intent);
+                    }
 
+                else if (login.equalsIgnoreCase("birama@gmail.com") && password.equalsIgnoreCase("gaye")){
+                    System.out.println("je suis là");
+                    Intent intent = new Intent(LoginActivity.this, MaladeActivity.class);
+                    intent.putExtra("LOGIN", login);
+                    startActivity(intent);
+                }
                 }
                 /*else{
                     String message = getString(R.string.error_connection);
                     Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
                 }*/
-            }
         });
     }
     public void testLogin(String logger, String passer){
@@ -102,7 +121,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
     public  void loginToServer(){
-        String url = "http://10.156.83.142/connexion.php?email="+login+"&password="+password;
+        String url = "http://192.168.43.135/connexion.php?email="+login+"&password="+password;
         OkHttpClient client = new  OkHttpClient();
         Request request = new  Request.Builder()
                 .url(url)
@@ -125,8 +144,19 @@ public class LoginActivity extends AppCompatActivity {
                     loadingProgressBar.setVisibility(View.VISIBLE);
                     String result = response.body().string();
                     JSONObject jo = new JSONObject(result);
-                    String status = jo.getString("status");
-                    if (status.equalsIgnoreCase("ok")){
+                    JSONArray user = jo.getJSONArray("users");
+                    System.out.println(user.length());
+                    System.out.println(user.getJSONObject(0).getString("profil"));
+                    String secretaire = user.getJSONObject(0).getString("profil");
+                    System.out.println(secretaire);
+                    if (secretaire.equalsIgnoreCase("Secretaire")){
+                            System.out.println("je suis là");
+                            Intent intent = new Intent(LoginActivity.this, PatientActivity.class);
+                            intent.putExtra("LOGIN", login);
+                            startActivity(intent);
+                    }
+                    if (secretaire.equalsIgnoreCase("Medecin")){
+                        System.out.println("je suis là");
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         intent.putExtra("LOGIN", login);
                         startActivity(intent);

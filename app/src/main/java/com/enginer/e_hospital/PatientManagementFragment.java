@@ -75,10 +75,7 @@ public class PatientManagementFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 layout.setVisibility(View.INVISIBLE);
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-                ft.replace(R.id.containerPatientList, new InscriptionFragment());
-                ft.commit();
+                getFragmentManager().beginTransaction().replace(R.id.containerPatientList, new InscriptionFragment()).addToBackStack(null).commit();
             }
         });
         listerPatient();
@@ -97,7 +94,7 @@ public class PatientManagementFragment extends Fragment {
         return result;
     }
     public void listerPatient(){
-        String url="http://10.156.83.142/affiche_patient.php";
+        String url="http://192.168.43.135/affiche_patient.php";
 
         OkHttpClient client = new  OkHttpClient();
         Request request = new  Request.Builder()

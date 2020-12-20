@@ -87,10 +87,6 @@
                        android:text="@string/address"
                        android:layout_marginRight="22dp">
                    </TextView>
-                   <TextView
-                       android:text="@string/phone"
-                       android:layout_marginRight="22dp">
-                   </TextView>
                </TableRow>
            </TableLayout>
        </LinearLayout>

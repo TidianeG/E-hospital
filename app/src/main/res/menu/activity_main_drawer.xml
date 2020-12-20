@@ -17,34 +17,11 @@
         </item>
 
     </group>
-
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_patient"
-            android:icon="@drawable/ic_sick_24"
-            android:title="@string/patient"
-            android:visible="true"/>
-        <item
-            android:id="@+id/nav_medecin"
-            android:icon="@drawable/ic_calendar_24"
-            android:title="@string/doctor"
-            android:visible="true"/>
-        <item
-            android:id="@+id/nav_secretaire"
-            android:icon="@drawable/ic_user_24"
-            android:title="@string/secretaire"
-            android:visible="true">
-
-        </item>
-    </group>
-
-    <group android:checkableBehavior="single">
-
         <item
             android:id="@+id/nav_connection"
             android:icon="@drawable/ic_login_24"
             android:title="@string/connection">
-
         </item>
 
     </group>
