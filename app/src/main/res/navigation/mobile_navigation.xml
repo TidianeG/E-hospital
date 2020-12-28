@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/nav_patient_management"
         android:name="com.enginer.e_hospital.PatientManagementFragment"
-        android:label="@string/appointment_management"
+        android:label="@string/patient_management"
         tools:layout="@layout/fragment_patient_management" />
 
     <activity

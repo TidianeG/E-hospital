@@ -27,9 +27,14 @@ public class ConsultationFragment extends Fragment {
         backConsult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               mede.setContentView(R.layout.activity_medecin);            }
+               mede.setContentView(R.layout.activity_medecin);
+                Intent retour = new Intent(getContext(), MedecinActivity.class);
+                startActivity(retour);
+            }
         });
 
          return view;
     }
+
+
 }

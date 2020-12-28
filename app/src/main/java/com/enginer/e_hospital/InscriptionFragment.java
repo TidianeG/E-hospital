@@ -88,8 +88,9 @@ public class InscriptionFragment extends Fragment {
                 phone = txtphone.getText().toString().trim();
                 lieu = txtlieu.getText().toString().trim();
                 spinnerGenre = txtSpinnerGenre.getSelectedItem().toString();
-                    inscriptionToServer();
-
+                    //inscriptionToServer();
+                //String message = getString(R.string.error_inscription);
+                //Toast.makeText(getActivity(), "Inscription reussie", Toast.LENGTH_SHORT).show();
             }
         });
         backPatient.setOnClickListener(new View.OnClickListener() {

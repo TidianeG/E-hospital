@@ -33,9 +33,10 @@
            android:textSize="@dimen/dim_title"
            android:layout_height="wrap_content"
            android:layout_marginTop="@dimen/dim_top"
-           android:text="@string/history_hospital">
-
-       </TextView>
+           android:text="cette application,portant comme nom E-Hospital, permet de gerer la gestion des consultations et la suivie patient d'une structure hospitalier.
+Elle  est divisée entrois rubrique, dont chaque permet deffetuer des taches differentes.
+">
+   </TextView>
 
    </LinearLayout>
 </ScrollView>
